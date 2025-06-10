@@ -1,15 +1,20 @@
-export interface Skill {
+// src/types/index.ts
+export interface Project {
+  id: number;
   title: string;
   description: string;
+  image: string;
+  tags: string[];
+  liveLink?: string; // Tanda '?' berarti opsional
+  slug?: string;
 }
 
-export interface Work {
-  title: string;
+export interface SkillCategory {
   category: string;
-  year: number;
+  items: string[];
 }
 
-export interface NavigationItem {
-  label: string;
-  href: string;
+// Jika Anda ingin mendefinisikan tipe untuk props di sini, bisa juga
+export interface LayoutProps {
+  children: React.ReactNode;
 }

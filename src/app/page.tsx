@@ -1,19 +1,27 @@
-"use client";
+// src/app/page.tsx
+import React from "react";
+// import Navbar from "@/components/Navbar";
+// import Footer from "../components/Footer";
+import HeroSection from "../components/HeroSection";
+// import AboutSection from "../components/AboutSection";
+// import ProjectsSection from "../components/ProjectsSection";
+// import ContactSection from "../components/ContactSection";
+import SplashCursor from "@/blocks/SplashCursor";
 
-import { useEffect, useState } from "react";
-import Hero from "@/components/HeroSection";
-import Spinner from "@/components/Spinner";
+// Karena komponen ini akan dirender di sisi server secara default,
+// dan tidak menggunakan hooks state secara langsung di level ini,
+// kita tidak perlu 'use client'. Navbar akan menangani 'use client' sendiri.
 
-export default function HomePage() {
-  const [loading, setLoading] = useState(true);
+const Home: React.FC = () => {
+  return (
+    <div className="min-h-screen bg-darkBg text-darkText font-sans">
+      <SplashCursor />
+      <HeroSection />
+      {/* <AboutSection /> */}
+      {/* <ProjectsSection /> */}
+      {/* <ContactSection /> */}
+    </div>
+  );
+};
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000); // Simulasi loading 2 detik
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  return <main>{loading ? <Spinner /> : <Hero />}</main>;
-}
+export default Home;
