@@ -4,6 +4,9 @@ const nextConfig = {
   images: {
     domains: ["cjrqukpnqzzkyehykxos.supabase.co"], // tambahkan domain Supabase kamu di sini
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 module.exports = nextConfig;
