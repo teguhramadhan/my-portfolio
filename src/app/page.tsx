@@ -11,10 +11,6 @@ import SplashCursor from "@/blocks/SplashCursor";
 // Analytics Vercel
 import { Analytics } from "@vercel/analytics/next";
 
-// Karena komponen ini akan dirender di sisi server secara default,
-// dan tidak menggunakan hooks state secara langsung di level ini,
-// kita tidak perlu 'use client'. Navbar akan menangani 'use client' sendiri.
-
 const Home: React.FC = () => {
   return (
     <div className="min-h-screen bg-darkBg text-darkText font-sans">
