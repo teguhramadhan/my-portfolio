@@ -3,7 +3,7 @@
 import { CodeXml } from "lucide-react";
 import Particles from "./Particle"; // sesuaikan path kalau beda folder
 
-export default function Hero() {
+export default function HeroSection() {
   return (
     <section className="relative flex flex-col items-center justify-center min-h-screen border border-dashed border-slate-500 rounded-3xl m-2 lg:m-12 bg-slate-900 text-white px-6 text-center overflow-hidden">
       {/* Partikel animasi di background */}

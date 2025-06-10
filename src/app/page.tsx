@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Hero from "@/components/Hero";
+import Hero from "@/components/HeroSection";
 import Spinner from "@/components/Spinner";
 
 export default function HomePage() {
