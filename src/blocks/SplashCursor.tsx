@@ -74,9 +74,9 @@ export default function SplashCursor({
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const pointers: Pointer[] = [pointerPrototype()];
+    let pointers: Pointer[] = [pointerPrototype()];
 
-    const config = {
+    let config = {
       SIM_RESOLUTION: SIM_RESOLUTION!,
       DYE_RESOLUTION: DYE_RESOLUTION!,
       CAPTURE_RESOLUTION: CAPTURE_RESOLUTION!,
@@ -151,7 +151,7 @@ export default function SplashCursor({
         ? (gl as WebGL2RenderingContext).HALF_FLOAT
         : (halfFloat && (halfFloat as any).HALF_FLOAT_OES) || 0;
 
-      const formatRGBA: any;
+      let formatRGBA: any;
       let formatRG: any;
       let formatR: any;
 
@@ -268,7 +268,7 @@ export default function SplashCursor({
 
     function addKeywords(source: string, keywords: string[] | null) {
       if (!keywords) return source;
-      const keywordsString = "";
+      let keywordsString = "";
       for (const keyword of keywords) {
         keywordsString += `#define ${keyword}\n`;
       }
@@ -1510,12 +1510,26 @@ export default function SplashCursor({
   ]);
 
   return (
-    <div className="fixed top-0 left-0 z-50 pointer-events-none w-full h-full">
+    <div
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        zIndex: 50,
+        pointerEvents: "none",
+        width: "100%",
+        height: "100%",
+      }}
+    >
       <canvas
         ref={canvasRef}
         id="fluid"
-        className="w-screen h-screen block"
-      ></canvas>
+        style={{
+          width: "100vw",
+          height: "100vh",
+          display: "block",
+        }}
+      />
     </div>
   );
 }
