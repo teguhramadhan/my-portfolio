@@ -1,12 +1,11 @@
-// src/app/page.tsx
 import React from "react";
+import HeroSection from "../components/HeroSection";
+import SplashCursor from "@/blocks/SplashCursor";
 // import Navbar from "@/components/Navbar";
 // import Footer from "../components/Footer";
-import HeroSection from "../components/HeroSection";
 // import AboutSection from "../components/AboutSection";
 // import ProjectsSection from "../components/ProjectsSection";
 // import ContactSection from "../components/ContactSection";
-import SplashCursor from "@/blocks/SplashCursor";
 
 // Analytics Vercel
 import { Analytics } from "@vercel/analytics/next";
