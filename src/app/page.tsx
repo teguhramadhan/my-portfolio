@@ -40,7 +40,6 @@ const Home: React.FC = () => {
   return (
     <div className="min-h-screen bg-darkBg text-darkText font-sans">
       <Analytics />
-      {/* <SplashCursor /> */}
       <HeroSection />
       <AboutSection />
       <PortfolioPage />

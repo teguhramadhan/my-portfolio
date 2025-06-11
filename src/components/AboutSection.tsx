@@ -112,12 +112,12 @@ const AboutSection: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="leading-relaxed text-darkText"
               >
-                Halo! Saya adalah seorang{" "}
+                Hello! I am a{" "}
                 <span className="font-semibold text-secondary">Designer</span>{" "}
-                yang bersemangat dalam menciptakan pengalaman pengguna yang
-                intuitif dan visual yang menarik. Dengan latar belakang yang
-                kuat dalam estetika dan fungsionalitas, saya mampu menerjemahkan
-                ide-ide kompleks menjadi solusi desain yang elegan.
+                passionate about creating intuitive and visually appealing user
+                experiences. With a strong background in aesthetics and
+                functionality, I am able to translate complex ideas into elegant
+                design solutions.
               </motion.p>
 
               <motion.p
@@ -127,15 +127,15 @@ const AboutSection: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.6 }}
                 className="leading-relaxed text-darkText"
               >
-                Di sisi lain, saya juga adalah{" "}
+                On the other hand, I am also{" "}
                 <span className="font-semibold text-accent">
                   Frontend Developer
                 </span>{" "}
-                yang terampil dalam membangun antarmuka web yang responsif,
-                performa tinggi, dan mudah dipelihara. Saya suka bekerja dengan
-                Next.js dan Tailwind CSS untuk menciptakan aplikasi web modern.
-                Saya percaya bahwa perpaduan antara desain yang baik dan kode
-                yang bersih adalah kunci untuk produk digital yang luar biasa.
+                skilled in building responsive, high-performance, and
+                maintainable web interfaces. I love working with Next.js and
+                Tailwind CSS to create modern web applications. I believe that
+                the combination of good design and clean code is the key to
+                great digital products.
               </motion.p>
             </div>
 
