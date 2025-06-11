@@ -2,8 +2,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import React from "react";
-// import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 // import fonts google
 import { Urbanist } from "next/font/google";
@@ -39,7 +37,6 @@ export default function RootLayout({
       <body className="font-sans">
         {/* <Navbar /> */}
         {children}
-        <Footer />
       </body>
     </html>
   );

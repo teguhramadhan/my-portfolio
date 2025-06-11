@@ -20,18 +20,22 @@ const HeroSection: React.FC = () => {
   return (
     <section
       id="hero"
-      className="relative h-screen mt-[-56px] md:mt-0 lg:mt-0 flex md:items-center items-center justify-center overflow-hidden bg-black text-white"
+      className="relative min-h-screen mt-[-56px] md:mt-0 lg:mt-0 flex md:items-center items-center justify-center overflow-hidden bg-black text-white"
     >
       <div className="flex flex-col justify-center items-center">
         {/* Ava Hero */}
-        <div className="text-center">
-          <ProfileImage // ganti dengan path fotomu
-            size={160}
-          />
+        <motion.p
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+        >
+          <div className="text-center">
+            <ProfileImage // ganti dengan path fotomu
+              size={160}
+            />
+          </div>
+        </motion.p>
 
-          {/* <h1 className="text-2xl font-bold">Teguh Ramadhan</h1> */}
-          {/* <p className="text-gray-400">Frontend Developer & Designer</p> */}
-        </div>
         {/* Detail hero */}
         <div className="relative z-10 p-8 max-w-4xl mx-auto">
           {/* Headline dengan Font Modern (Inter) dan Animasi Framer Motion */}
