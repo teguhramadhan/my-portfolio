@@ -25,7 +25,6 @@ export default function AdminPage() {
     }
 
     try {
-      // Upload gambar ke Supabase Storage
       const fileExt = imageFile.name.split(".").pop();
       const fileName = `${Date.now()}.${fileExt}`;
       const { error: uploadError } = await supabase.storage
@@ -34,12 +33,10 @@ export default function AdminPage() {
 
       if (uploadError) throw uploadError;
 
-      // Dapatkan public URL gambar
       const { data: publicUrlData } = supabase.storage
         .from("portfolio-images")
         .getPublicUrl(fileName);
 
-      // Simpan data portfolio ke tabel Supabase
       const { error: insertError } = await supabase.from("portfolios").insert([
         {
           title,
@@ -71,55 +68,59 @@ export default function AdminPage() {
   }
 
   return (
-    <main className="max-w-xl mx-auto p-6">
-      <h1 className="text-2xl font-bold mb-6">Upload Portfolio Baru</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <input
-          type="text"
-          placeholder="Judul Project"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          className="border p-2 rounded"
-        />
-        <textarea
-          placeholder="Deskripsi"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          className="border p-2 rounded"
-          rows={4}
-        />
-        <select
-          value={type}
-          onChange={(e) => setType(e.target.value)}
-          className="border p-2 rounded"
-        >
-          <option value="design">Design</option>
-          <option value="coding">Coding</option>
-        </select>
-        <input
-          type="url"
-          placeholder="Link Project (optional)"
-          value={projectLink}
-          onChange={(e) => setProjectLink(e.target.value)}
-          className="border p-2 rounded"
-        />
-        <input
-          type="file"
-          accept="image/*"
-          onChange={(e) =>
-            setImageFile(e.target.files ? e.target.files[0] : null)
-          }
-          className="border p-2 rounded"
-        />
-        <button
-          type="submit"
-          disabled={loading}
-          className="bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
-        >
-          {loading ? "Uploading..." : "Upload Portfolio"}
-        </button>
-      </form>
-      {message && <p className="mt-4">{message}</p>}
-    </main>
+    <div className="min-h-screen flex items-center justify-center bg-black px-4 text-white">
+      <main className="w-full max-w-xl bg-[#1e1e1e] p-6 rounded-lg shadow-lg py-12">
+        <h1 className="text-2xl font-bold mb-6 text-center">
+          Upload Portfolio Baru
+        </h1>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <input
+            type="text"
+            placeholder="Projects Title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            className="bg-[#2a2a2a] border border-gray-600 text-white p-2 rounded focus:outline-none focus:ring-2 focus:ring-accent"
+          />
+          <textarea
+            placeholder="Description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            className="bg-[#2a2a2a] border border-gray-600 text-white p-2 rounded focus:outline-none focus:ring-2 focus:ring-accent"
+            rows={4}
+          />
+          <select
+            value={type}
+            onChange={(e) => setType(e.target.value)}
+            className="bg-[#2a2a2a] border border-gray-600 text-white p-2 rounded focus:outline-none focus:ring-2 focus:ring-accent"
+          >
+            <option value="design">Design</option>
+            <option value="coding">Coding</option>
+          </select>
+          <input
+            type="url"
+            placeholder="Link Project (optional)"
+            value={projectLink}
+            onChange={(e) => setProjectLink(e.target.value)}
+            className="bg-[#2a2a2a] border border-gray-600 text-white p-2 rounded focus:outline-none focus:ring-2 focus:ring-accent"
+          />
+          <input
+            type="file"
+            accept="image/*"
+            onChange={(e) =>
+              setImageFile(e.target.files ? e.target.files[0] : null)
+            }
+            className="bg-[#2a2a2a] border border-gray-600 text-white p-2 rounded file:mr-4 file:py-1 file:px-2 file:rounded file:border file:text-sm file:font-semibold file:border-accent file:bg-transparent file:text-white hover:file:bg-accent"
+          />
+          <button
+            type="submit"
+            disabled={loading}
+            className="bg-accent text-white py-4 rounded hover:bg-accent/80 transition"
+          >
+            {loading ? "Uploading..." : "Upload Portfolio"}
+          </button>
+        </form>
+        {message && <p className="mt-4 text-center">{message}</p>}
+      </main>
+    </div>
   );
 }

@@ -8,17 +8,26 @@ import AboutSection from "../components/AboutSection";
 import PortfolioPage from "./portfolio/page";
 // import Navbar from "@/components/Navbar";
 import Footer from "../components/Footer";
-// import ContactSection from "../components/ContactSection";
+import ContactSection from "../components/ContactSection";
 
 // Analytics Vercel
 import { Analytics } from "@vercel/analytics/next";
 
 // 🌀 Loading Spinner
 const LoadingSpinner = () => (
-  <div className="flex bg-darkBg justify-center items-center h-screen gap-2">
-    <div className="relative w-6 h-6 animate-bounce">
-      <div className="absolute inset-0 rounded-full bg-accent opacity-75 animate-ping"></div>
-      <div className="absolute inset-0 rounded-full bg-accent"></div>
+  <div className="h-screen flex items-center justify-center bg-black">
+    <div className="animate-sway">
+      <div className="terminal-loader">
+        <div className="terminal-header">
+          <div className="terminal-title">Status</div>
+          <div className="terminal-controls">
+            <div className="control close"></div>
+            <div className="control minimize"></div>
+            <div className="control maximize"></div>
+          </div>
+        </div>
+        <div className="text">Loading...</div>
+      </div>
     </div>
   </div>
 );
@@ -43,8 +52,8 @@ const Home: React.FC = () => {
       <HeroSection />
       <AboutSection />
       <PortfolioPage />
+      <ContactSection />
       <Footer />
-      {/* <ContactSection /> */}
     </div>
   );
 };

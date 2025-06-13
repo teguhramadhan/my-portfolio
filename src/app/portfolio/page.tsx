@@ -201,7 +201,8 @@ export default function PortfolioPage() {
                         >
                           <span className="text-lg">
                             {iconMap[tool] ?? "🛠️"}
-                          </span>
+                          </span>{" "}
+                          *&
                           <span className="text-slate-300">{tool}</span>
                         </div>
                       ))}
