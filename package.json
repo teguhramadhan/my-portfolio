@@ -10,6 +10,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@supabase/auth-helpers-nextjs": "^0.10.0",
     "@supabase/supabase-js": "^2.50.0",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@vercel/analytics": "^1.5.0",
@@ -23,6 +24,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@types/node": "^24.0.1",
     "@types/react": "^19",
     "autoprefixer": "^10.4.21",
     "eslint": "^9",

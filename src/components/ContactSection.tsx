@@ -23,10 +23,18 @@ const ContactSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg text-center mb-12 max-w-2xl mx-auto"
+          className="text-lg text-center max-w-2xl mx-auto"
         >
-          <p>Let's connect through social media!</p>
-          <p> Feel free to DM or email me</p>
+          Let's connect through social media!
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-lg text-center max-w-2xl mx-auto"
+        >
+          Feel free to DM or email me
         </motion.p>
 
         <motion.div
@@ -34,13 +42,13 @@ const ContactSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex justify-center gap-8"
+          className="flex justify-center gap-4 my-4"
         >
           <a
-            href="https://instagram.com/yourusername"
+            href="https://instagram.com/_ramadhanteguh"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-3xl text-darkText hover:text-accent transition-colors"
+            className="text-xl text-darkText hover:text-accent transition-colors"
           >
             <FaInstagram />
           </a>
@@ -48,7 +56,7 @@ const ContactSection: React.FC = () => {
             href="https://twitter.com/yourusername"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-3xl text-darkText hover:text-accent transition-colors"
+            className="text-xl text-darkText hover:text-accent transition-colors"
           >
             <FaTwitter />
           </a>
@@ -56,13 +64,13 @@ const ContactSection: React.FC = () => {
             href="https://tiktok.com/@yourusername"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-3xl text-darkText hover:text-accent transition-colors"
+            className="text-xl text-darkText hover:text-accent transition-colors"
           >
             <FaTiktok />
           </a>
           <a
             href="mailto:your.email@example.com"
-            className="text-3xl text-darkText hover:text-accent transition-colors"
+            className="text-xl text-darkText hover:text-accent transition-colors"
           >
             <FaEnvelope />
           </a>
