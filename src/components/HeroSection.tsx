@@ -3,14 +3,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-// import Link from "next/link";
+import { RiCodeBlock } from "react-icons/ri";
+import { TbVectorBezier2 } from "react-icons/tb";
 
 import SplitText from "@/blocks/SpliteText";
 import ProfileImage from "@/components/ProfileImage";
-
-// import icons
-import { RiCodeBlock } from "react-icons/ri";
-import { TbVectorBezier2 } from "react-icons/tb";
 
 const handleAnimationComplete = () => {
   console.log("All letters have animated!");
@@ -23,22 +20,19 @@ const HeroSection: React.FC = () => {
       className="relative min-h-screen mt-[-56px] md:mt-0 lg:mt-0 flex md:items-center items-center justify-center overflow-hidden bg-black text-white"
     >
       <div className="flex flex-col justify-center items-center">
-        {/* Ava Hero */}
-        <motion.p
+        {/* Avatar Hero */}
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
         >
           <div className="text-center">
-            <ProfileImage // ganti dengan path fotomu
-              size={160}
-            />
+            <ProfileImage size={160} />
           </div>
-        </motion.p>
+        </motion.div>
 
-        {/* Detail hero */}
+        {/* Detail Hero */}
         <div className="relative z-10 p-8 max-w-4xl mx-auto">
-          {/* Headline dengan Font Modern (Inter) dan Animasi Framer Motion */}
           <div className="flex flex-col items-start gap-3">
             <SplitText
               text="Hello,"
@@ -68,10 +62,13 @@ const HeroSection: React.FC = () => {
               textAlign="center"
               onLetterAnimationComplete={handleAnimationComplete}
             />
+
+            {/* Decorative Icons */}
             <RiCodeBlock className="absolute text-[48vw] lg:text-[10vw] right-6 lg:right-0 top-0 text-secondary/60 -z-10" />
             <TbVectorBezier2 className="absolute text-[48vw] lg:text-[10vw] left-6 lg:left-0 bottom-0 text-accent/60 -z-10" />
           </div>
 
+          {/* Description Text */}
           <motion.p
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
